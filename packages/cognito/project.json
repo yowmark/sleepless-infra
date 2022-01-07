@@ -1,0 +1,39 @@
+{
+  "root": "packages/cognito",
+  "sourceRoot": "packages/cognito/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/cognito",
+        "main": "packages/cognito/src/index.ts",
+        "tsConfig": "packages/cognito/tsconfig.app.json",
+        "assets": ["packages/cognito/*.md"]
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "cognito:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/cognito/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/cognito"],
+      "options": {
+        "jestConfig": "packages/cognito/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

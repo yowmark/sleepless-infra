@@ -1,0 +1,9 @@
+{
+  "name": "@sleepless-infra/cognito",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "dependencies": {
+    "aws-cdk-lib": "^2.4.0",
+    "constructs": "^10.0.27"
+  }
+}
